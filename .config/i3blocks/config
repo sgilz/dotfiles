@@ -1,0 +1,59 @@
+full_text=/
+align=center
+separator=true
+separator_block_width=20
+
+[bandwidth]
+label=
+command=~/.scripts/bandwidth
+interval=1
+markup=pango
+color=#6c71c4
+#label=<span font='FontAwesome'>&#xf1eb;</span>
+
+[cpu_usage2]
+command=~/.scripts/cpu_usage2
+markup=pango
+interval=persist
+color=#F200F6
+#background=#86B300
+LABEL=CPU
+#WARN_PERCENT=50
+#CRIT_PERCENT=80
+#DECIMALS=1
+
+[memory]
+command=~/.scripts/memory
+label=<span font='FontAwesome'>&#xf2db; </span>
+interval=1
+markup=pango
+#background=#399EE6
+
+[temp]
+label=
+command=echo " $(sensors coretemp-isa-0000 | grep 'Package' | cut -d' ' -f 5)"
+interval=10
+color=#b58900
+
+[volume]
+command=~/.scripts/volume
+interval=1
+signal=10
+color=#d70a53
+
+[time]
+label= 
+command=date '+%a %d/%m/%y %l:%M:%S %p'
+interval=1
+color=#50C878
+
+[battery]
+command=~/.scripts/battery2
+interval=3
+
+[ssid]
+label=
+command=echo " $(iw dev wlp2s0 link | grep SSID | cut -d " " -f 2-)"
+color=#d33682
+interval=60
+
