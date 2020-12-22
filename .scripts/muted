@@ -2,7 +2,7 @@
 CMD=$(pacmd list-sources | grep muted | tail -1 | cut -d ' ' -f 2)
 MUTED=$(echo $CMD)
 if [[ $MUTED == 'no' ]]; then
-    exec notify-send "UNMUTED"
+    exec notify-send ' UNMUTED'
 elif [[ $MUTED == 'yes' ]]; then
-    exec notify-send "MUTED"
+    exec notify-send ' MUTED'
 fi
