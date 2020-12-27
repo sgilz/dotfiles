@@ -129,7 +129,7 @@ exec_always --no-startup-id ~/.config/dunst/dunstrc
 #################
 
 #terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 #others
 bindsym $mod+p exec ~/.config/rofi/run.sh
