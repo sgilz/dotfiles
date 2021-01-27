@@ -89,7 +89,7 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-mute 0 false ; exec pactl set-s
 bindsym XF86AudioLowerVolume exec pactl set-sink-mute 0 false ; exec pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 #bindsym XF86AudioMicMute exec pactl set-source-mute 2 toggle
-bindsym $mod+F3 exec pactl set-source-mute 1 toggle
+bindsym F3 exec pactl set-source-mute 1 toggle; exec ~/.scripts/muted
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
