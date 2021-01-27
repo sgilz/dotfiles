@@ -1,0 +1,24 @@
+#!/bin/bash
+INF=$(acpi -b)
+PER=$(echo $INF | grep -E -o '[0-9][0-9]?%')
+STAT=$(echo $INF | grep -E -o ' [A-Z][a-z]+')
+
+FULL_TEXT=""
+if [[ $STAT == ' Discharging' ]]; then
+    FULL_TEXT="⚡ $PER D"
+elif [[ $STAT == ' Charging' ]]; then
+    FULL_TEXT="  $PER C"
+elif [[ $STAT == ' Unknown' || $STAT == ' Not' || $STAT == ' Full' ]]; then
+   FULL_TEXT=" $PER F"
+fi
+
+# Full and short texts
+echo $FULL_TEXT
+echo $FULL_TEXT
+
+# Set urgent flag below 10% or use orange below 20%
+[ ${PER%?} -le 10 ] && exit 33
+[ ${PER%?} -le 20 ] && echo "#FF8000"
+
+exit 0
+
